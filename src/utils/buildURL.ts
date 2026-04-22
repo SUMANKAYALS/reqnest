@@ -5,7 +5,7 @@ export function buildURL(
 ): string {
     let fullURL = "";
 
-    // ✅ Safe URL join
+    // Safe URL join
     if (baseURL && url) {
         fullURL =
             baseURL.replace(/\/+$/, "") + "/" + url.replace(/^\/+/, "");
@@ -13,7 +13,7 @@ export function buildURL(
         fullURL = baseURL || url || "";
     }
 
-    // ✅ Add query params
+    // Add query params
     if (params && Object.keys(params).length > 0) {
         const searchParams = new URLSearchParams();
 
