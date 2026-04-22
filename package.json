@@ -1,0 +1,54 @@
+{
+    "name": "reqnest",
+    "version": "1.0.0",
+    "description": "A middleware-driven HTTP client for JavaScript (Node.js + Browser)",
+    "type": "module",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json"
+    },
+    "keywords": [
+        "http-client",
+        "fetch",
+        "middleware",
+        "axios-alternative",
+        "api-client",
+        "request-library",
+        "node-fetch",
+        "http",
+        "rest-client"
+    ],
+    "author": "Suman Kayal",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/reqnest.git"
+    },
+    "homepage": "https://github.com/yourusername/reqnest#readme",
+    "bugs": {
+        "url": "https://github.com/yourusername/reqnest/issues"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "undici": "^8.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.6.0",
+        "typescript": "^5.0.0"
+    }
+}
