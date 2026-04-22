@@ -28,10 +28,10 @@ export const retry = (retries = 2): Middleware => {
 
         for (let attempt = 0; attempt <= retries; attempt++) {
             try {
-                // 🔥 Run full chain once
+                // Run full chain once
                 await next();
 
-                // ✅ success
+                // success
                 if (!ctx.error) return;
 
             } catch (err) {
@@ -39,11 +39,11 @@ export const retry = (retries = 2): Middleware => {
                 ctx.error = err;
 
                 if (attempt === retries) {
-                    throw err; // ❌ final failure
+                    throw err; //  final failure
                 }
             }
 
-            // 🔄 Reset state before retry
+            // Reset state before retry
             ctx.error = undefined;
             ctx.response = undefined;
         }

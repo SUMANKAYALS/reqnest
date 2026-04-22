@@ -1,21 +1,21 @@
 // import { create } from "./create.js";
 // import { dispatch } from "./core/dispatch.js";
 
-// // 🔥 create default instance (with safe defaults)
+// // create default instance (with safe defaults)
 // // const reqnest = create({
-// //     timeout: 10000, // ✅ fix timeout issue
+// //     timeout: 10000, // fix timeout issue
 // // });
 
 // const reqnest = create({
-//     timeout: undefined, // 🔥 important
+//     timeout: undefined, // important
 // });
 
 // reqnest.use(dispatch);
 
-// // ✅ default export
+// // default export
 // export default reqnest;
 
-// // ✅ named exports
+// // named exports
 // export { create } from "./create.js";
 // export { dispatch } from "./core/dispatch.js";
 
@@ -42,4 +42,4 @@ export { cachePlugin } from "./plugins/cache.js";
 export { dedupe } from "./plugins/dedupe.js";
 export { rateLimit } from "./plugins/rateLimit.js";
 // plugins
-export { retry } from "./plugins/retry.js";   // ✅ ADD THIS
+export { retry } from "./plugins/retry.js";

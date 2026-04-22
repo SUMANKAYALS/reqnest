@@ -322,7 +322,7 @@ export const dispatch: Middleware = async (ctx, next) => {
       signal: controller.signal,
     });
 
-    // 📦 parse response
+    //  parse response
     let data: any;
     const contentType = res.headers.get("content-type") || "";
 
@@ -354,7 +354,7 @@ export const dispatch: Middleware = async (ctx, next) => {
       );
     }
 
-    // ✅ FIX: convert headers to plain object
+    //  FIX: convert headers to plain object
     const headersObj: Record<string, string> = {};
     res.headers.forEach((value, key) => {
       headersObj[key] = value;
