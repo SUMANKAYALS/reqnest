@@ -41,3 +41,5 @@ export { dispatch } from "./core/dispatch.js";
 export { cachePlugin } from "./plugins/cache.js";
 export { dedupe } from "./plugins/dedupe.js";
 export { rateLimit } from "./plugins/rateLimit.js";
+// plugins
+export { retry } from "./plugins/retry.js";   // ✅ ADD THIS
