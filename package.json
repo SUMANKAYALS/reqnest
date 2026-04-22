@@ -35,15 +35,19 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/yourusername/reqnest.git"
+        "url": "https://github.com/SUMANKAYALS/reqnest.git"
     },
-    "homepage": "https://github.com/yourusername/reqnest#readme",
+    "homepage": "https://github.com/SUMANKAYALS/reqnest#readme",
     "bugs": {
-        "url": "https://github.com/yourusername/reqnest/issues"
+        "url": "https://github.com/SUMANKAYALS/reqnest/issues"
     },
     "engines": {
         "node": ">=18"
     },
+    "publishConfig": {
+        "access": "public"
+    },
+    "sideEffects": false,
     "dependencies": {
         "undici": "^8.1.0"
     },
