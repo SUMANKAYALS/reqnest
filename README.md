@@ -82,11 +82,11 @@ Your App  →  [dedupe]  →  [cache]  →  [rateLimit]  →  [dispatch]  →  N
 ## 📦 Installation
 
 ```bash
-npm install reqnest
+npm install @suamnkayal/reqnest
 # or
-yarn add reqnest
+yarn add @suamnkayal/reqnest
 # or
-pnpm add reqnest
+pnpm add @suamnkayal/reqnest
 ```
 
 > Requires **Node.js 18+** or a modern browser with native `fetch` support.
@@ -96,7 +96,7 @@ pnpm add reqnest
 ## 🚀 Quick Start
 
 ```js
-import reqnest from "reqnest";
+import reqnest from "@suamnkayal/reqnest";
 
 const res = await reqnest.get("https://jsonplaceholder.typicode.com/posts");
 
@@ -111,7 +111,7 @@ console.log(res.status);  // 200
 Create isolated client instances with their own base URL, headers, and middleware stack.
 
 ```js
-import { create, dispatch } from "reqnest";
+import { create, dispatch } from "@suamnkayal/reqnest";
 
 const api = create({
   baseURL: "https://api.example.com",

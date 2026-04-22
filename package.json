@@ -1,5 +1,5 @@
 {
-    "name": "reqnest",
+    "name": "@suamnkayal/reqnest",
     "version": "1.0.0",
     "description": "A middleware-driven HTTP client for JavaScript (Node.js + Browser)",
     "type": "module",
@@ -37,7 +37,7 @@
         "type": "git",
         "url": "https://github.com/SUMANKAYALS/reqnest.git"
     },
-    "homepage": "https://github.com/SUMANKAYALS/reqnest#readme",
+    "homepage": "https://github.com/SUMANKAYALS/reqnest-docs#readme",
     "bugs": {
         "url": "https://github.com/SUMANKAYALS/reqnest/issues"
     },
