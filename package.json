@@ -1,6 +1,6 @@
 {
     "name": "@suamnkayal/reqnest",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A middleware-driven HTTP client for JavaScript (Node.js + Browser)",
     "type": "module",
     "main": "./dist/cjs/index.js",
