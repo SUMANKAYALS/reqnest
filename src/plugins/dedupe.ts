@@ -1,23 +1,85 @@
-import { Middleware } from "../types/middleware.js";
+import { Middleware }
+    from "../types/middleware.js";
 
-const pending = new Map<string, Promise<any>>();
+const pending =
+    new Map<string, Promise<any>>();
 
-export const dedupe: Middleware = async (ctx, next) => {
-    const key = ctx.config.url;
+export const dedupe:
+    Middleware =
+    async (ctx, next) => {
 
-    if (pending.has(key)) {
-        ctx.response = await pending.get(key);
-        return;
-    }
+        /*
+        |--------------------------------------------------------------------------
+        | Dedupe Only GET Requests
+        |--------------------------------------------------------------------------
+        */
 
-    const promise = (async () => {
-        await next();
-        return ctx.response;
-    })();
+        if (
+            ctx.config.method !==
+            "GET"
+        ) {
 
-    pending.set(key, promise);
+            return next();
+        }
 
-    ctx.response = await promise;
+        /*
+        |--------------------------------------------------------------------------
+        | Unique Request Key
+        |--------------------------------------------------------------------------
+        */
 
-    pending.delete(key);
-};
+        const key =
+            JSON.stringify({
+                method:
+                    ctx.config.method,
+
+                url:
+                    ctx.config.url,
+
+                params:
+                    ctx.config.params,
+            });
+
+        /*
+        |--------------------------------------------------------------------------
+        | Return Existing Request
+        |--------------------------------------------------------------------------
+        */
+
+        if (
+            pending.has(key)
+        ) {
+
+            ctx.response =
+                await pending.get(key);
+
+            return;
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Create Request Promise
+        |--------------------------------------------------------------------------
+        */
+
+        const promise =
+            (async () => {
+
+                await next();
+
+                return ctx.response;
+
+            })();
+
+        pending.set(
+            key,
+            promise
+        );
+
+        ctx.response =
+            await promise;
+
+        pending.delete(
+            key
+        );
+    };
